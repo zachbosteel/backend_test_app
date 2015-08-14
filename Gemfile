@@ -43,3 +43,11 @@ group :development, :test do
   gem 'spring'
 end
 
+# My gems
+
+gem 'carrierwave'
+gem 'carrierwave_backgrounder'
+gem 'rmagick'
+gem 'redis-rails'
+gem 'sidekiq'
+gem 'sinatra', :require => nil

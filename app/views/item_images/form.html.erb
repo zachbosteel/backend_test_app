@@ -1,0 +1,11 @@
+<%= form_for @item_image, url: {action: "create"} do |f| %>
+  <fieldset class="inputs">
+    <ol>
+      <% if f.object.image.present? %>
+        <%= image_tag(f.object.image_url(:small)) %>
+      <% end %>
+      <%= f.file_field :image %>
+    </ol>
+  </fieldset>
+  <%= f.submit "Create" %>
+<% end %>
