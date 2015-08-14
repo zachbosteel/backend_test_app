@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :item_images
   get '/' => 'item_images#form'
+  post '/item_images' => 'item_images#create'
 end

@@ -9,11 +9,12 @@ class ItemImagesController < ApplicationController
   end
 
   def create
-    if params[:image].present?
-      item_image = ItemImage.create(file: params[:image])
+    #if params[:image].present?
+      puts params[:item_image][:image]
+      item_image = ItemImage.create(image: params[:item_image][:image])
       #item_image.item_id = item.id
       item_image.save
-    end
+    #end
     redirect_to '/sidekiq'
   end
 
