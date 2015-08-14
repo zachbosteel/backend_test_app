@@ -51,3 +51,4 @@ gem 'rmagick'
 gem 'redis-rails'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
+gem 'dotenv-rails', '~> 2.0.2'
