@@ -5,15 +5,23 @@ class ItemImagesController < ApplicationController
   # end
   
   def form
+    @item = Item.new
     @item_image = ItemImage.new
   end
 
   def create
-    #if params[:image].present?
-      item_image = ItemImage.create(image: params[:item_image][:image])
-      #item_image.item_id = item.id
-      item_image.save
-    #end
+    item = Item.new
+    item.name = params[:title]
+    item.description = params[:description]
+    item.save
+    if params[:image].present?
+          params[:image].each do |item_image|
+            p item_image
+            new_item_image = ItemImage.create(image: item_image)
+            new_item_image.item_id = item.id
+            new_item_image.save
+          end
+    end
     redirect_to '/sidekiq'
   end
 
