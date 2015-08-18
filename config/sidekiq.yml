@@ -1,4 +1,5 @@
 production:
   :concurrency: 2
 :queues:
+  - default
   - carrierwave
