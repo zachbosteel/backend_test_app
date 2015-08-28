@@ -3,7 +3,7 @@
 class ItemImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
-  include ::CarrierWave::Backgrounder::Delay
+  #include ::CarrierWave::Backgrounder::Delay
 
   storage :fog
 
