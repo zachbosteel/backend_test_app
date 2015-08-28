@@ -15,5 +15,6 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = ENV['S3_BUCKET']
     config.fog_public     = false
-    config.cache_dir      = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com/tmp/uploads"
+    config.root           = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com/"
+    config.cache_dir      = "tmp/uploads"
   end
