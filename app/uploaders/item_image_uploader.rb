@@ -12,7 +12,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "tmp/uploads"
+    "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com/tmp/uploads"
   end
 
   def auto_orient
