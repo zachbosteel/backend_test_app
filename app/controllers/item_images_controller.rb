@@ -22,7 +22,7 @@ class ItemImagesController < ApplicationController
             new_item_image.save
           end
     end
-    redirect_to '/sidekiq'
+    redirect_to '/resque'
   end
 
   private
