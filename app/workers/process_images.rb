@@ -11,7 +11,7 @@ class ProcessImages
     item.item_images.each do |item_image|
       image = item_image.image
       image.cache!
-      image.resize_to_fill(20, 20)
+      # image.resize_to_fill(20, 20)
       image.store!
     end
   end

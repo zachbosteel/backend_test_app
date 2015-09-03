@@ -3,7 +3,7 @@
 class ItemImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
-  # include ::CarrierWave::Backgrounder::Delay
+  include ::CarrierWave::Backgrounder::Delay
 
   storage :fog
 
@@ -21,20 +21,20 @@ class ItemImageUploader < CarrierWave::Uploader::Base
     end
   end
 
-  # version :small do
-  #   process :auto_orient
-  #   process :resize_to_limit => [100, 100]
-  # end
+  version :small do
+    process :auto_orient
+    process :resize_to_limit => [100, 100]
+  end
   
-  # version :medium do
-  #   process :auto_orient
-  #   process :resize_to_limit => [320, 320]
-  # end
+  version :medium do
+    process :auto_orient
+    process :resize_to_limit => [320, 320]
+  end
 
-  # version :large do
-  #   process :auto_orient
-  #   process :resize_to_limit => [550, 550]
-  # end
+  version :large do
+    process :auto_orient
+    process :resize_to_limit => [550, 550]
+  end
 
   def crop
     manipulate! do |img|
