@@ -1,1 +1,3 @@
-Resque.redis = ENV['REDISTOGO_URL']
+rails_root = ENV['RAILS_ROOT'] || File.dirname(__FILE__) + '/../..'
+rails_env = ENV['RAILS_ENV'] || 'development'
+# Resque.redis = ENV['REDISTOGO_URL']
