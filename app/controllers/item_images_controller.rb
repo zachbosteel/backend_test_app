@@ -1,8 +1,4 @@
 class ItemImagesController < ApplicationController
-  # def create
-  #   @item_image = ItemImage.new(item_image_params)
-  #   @item_image.save
-  # end
   
   def form
     @item = Item.new
