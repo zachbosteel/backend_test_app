@@ -9,3 +9,12 @@
 
   <%= f.submit "Create Item" %>
 <% end %>
+
+<hr>
+<% @items.each do |item| %>
+  <h3><%= item.name %></h3>
+  <h4><%= item.description %></h4>
+  <% item.item_images.each do |item_image| %>
+    <%= image_tag item_image.image %>
+  <% end %>
+<% end %>

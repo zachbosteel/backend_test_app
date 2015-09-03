@@ -1,6 +1,7 @@
 class ItemImagesController < ApplicationController
-  
+
   def form
+    @items = Item.all
     @item = Item.new
     @item_image = ItemImage.new
   end
@@ -19,7 +20,7 @@ class ItemImagesController < ApplicationController
           end
     end
     Resque.enqueue(ProcessImages, item.id)
-    redirect_to '/resque'
+    redirect_to '/'
   end
 
   private
