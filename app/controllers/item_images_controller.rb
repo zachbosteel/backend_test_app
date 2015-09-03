@@ -22,7 +22,7 @@ class ItemImagesController < ApplicationController
             new_item_image.save
           end
     end
-    # Resque.enqueue(ProcessImages, item.id)
+    Resque.enqueue(ProcessImages, item.id)
     redirect_to '/resque'
   end
 
